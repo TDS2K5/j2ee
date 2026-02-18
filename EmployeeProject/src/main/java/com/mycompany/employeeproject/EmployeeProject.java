@@ -4,6 +4,8 @@
 
 package com.mycompany.employeeproject;
 
+import java.util.Scanner;
+
 enum Gender{
     MALE,FEMALE,OTHER
 }
@@ -22,6 +24,47 @@ interface EmployeeSalary{
     void CalculateSalary();
 }
 
+class Employee implements EmployeeSalary{
+    
+    int empId;
+    String name;
+    float gross,net,hra;
+    Gender gender;
+    EmployeeType type;
+    static Scanner sc=new Scanner(System.in);
+    
+    void getData(){
+try{
+System.out.println("Enter empid, name, gross: ");
+empId=sc.nextInt();
+name=sc.next();
+gross=sc.nextFloat();
+System.out.println("Enter gender: ");
+String g=sc.next(); //it is for gender
+gender=Gender.valueOf(g.toUpperCase()); //if enter gender is not gender object
+//then it will throws an exception. so enclose it inside try catch
+System.out.println("Enter employee type: ");
+type=EmployeeType.valueOf(sc.next().toUpperCase());
+}
+catch(Exception e){
+System.out.println("Invalid gender or type");
+}
+}
+    
+
+    @Override
+    public void CalculateSalary() {
+        hra=gross*0.1f;
+        net=gross+hra;
+        
+    }
+    void display(){
+System.out.printf("Name: %s\nGender: %s\nEmpType value:%d",name,gender,type.value);
+//or
+
+}
+    
+}
 
 
 /**
@@ -31,6 +74,9 @@ interface EmployeeSalary{
 public class EmployeeProject {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Employee emp=new Employee();
+emp.getData();
+emp.CalculateSalary();
+emp.display();
     }
 }
