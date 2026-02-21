@@ -20,7 +20,7 @@ enum EventType{
          System.out.println("Enter event name: ");
          Scanner sc=new Scanner(System.in);
          String e=sc.next().toUpperCase();
-         EventType select=EventType.valueof(e);
+         EventType select=EventType.valueOf(e);
          System.out.println(select);
     }
     }
