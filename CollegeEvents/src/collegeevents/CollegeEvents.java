@@ -13,9 +13,7 @@ enum EventType{
     EventType(float f, int m){
        
     }
-}
 
-    class Eve{
     void getData(){
          System.out.println("Enter event name: ");
          Scanner sc=new Scanner(System.in);
