@@ -11,23 +11,26 @@ enum EventType{
     int max_size;
     
     EventType(float f, int m){
-        System.out.println("Enter event name: ");
-        Scanner sc=new Scanner(System.in);
-        String e=sc.next().toUpperCase();
-        
-    }
-    void getData(){
-        
+       
     }
 }
+
+    class Eve{
+    void getData(){
+         System.out.println("Enter event name: ");
+         Scanner sc=new Scanner(System.in);
+         String e=sc.next().toUpperCase();
+         
+    }
+    }
+
 
 public class CollegeEvents {
 
     public static void main(String[] args) {
-        
+        Eve ev=new Eve();
         Scanner sc=new Scanner(System.in);
-        
-        
+        ev.getData();
         
     }
     
