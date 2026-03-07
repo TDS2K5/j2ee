@@ -1,0 +1,39 @@
+A6
+Web pages-> index.jsp 
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Fibonacci and Prime numbers</title>
+    </head>
+    <body>
+        <%
+        int i,f1=0,f2=1,f3,c=0,n=2;
+        out.println("Fibonacci Series : 0 1 ");
+        for(i=2;i<10;i++){
+            f3=f1+f2;
+            out.print(f3+" ");
+            f1=f2;
+            f2=f3;
+        }
+        out.print("<br>Prime numbers : ");
+        while(c<10){
+            int p=1;
+            for(i=2;i<n/2;i++){
+                if(n%i==0){
+                    p=0;
+                    break;
+                }
+            }
+            if(p==1){
+                out.print(n+" ");
+                c++;
+            }
+            n++;
+        }
+        %>
+    </body>
+</html>
+
