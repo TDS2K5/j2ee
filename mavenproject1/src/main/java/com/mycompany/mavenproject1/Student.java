@@ -3,11 +3,28 @@
  */
 
 package com.mycompany.mavenproject1;
-import java.util.Scanner;
+import java.util.*;
+
+
 public class Student {
 String name, result;
 int m1,m2,m3,total;
 float avg;
+public static void main(String[] args) {
+String name;
+int m1,m2,m3;
+Scanner sc=new Scanner(System.in);
+System.out.println("Enter student name,m1,m2,m3: ");
+name=sc.next();
+m1=sc.nextInt();
+m2=sc.nextInt();
+m3=sc.nextInt();
+
+Student s=new Student(name,m1,m2,m3);
+s.calculate();
+s.display();
+}
+
     public Student(String name, int m1, int m2, int m3) {
 
     this.name = name;
@@ -28,18 +45,7 @@ void calculate(){
 void display(){
 System.out.printf("Name: "+name+"\ntotal: "+total+"\nResult: "+result);
 }
-public static void main(String[] args) {
-String name;
-int m1,m2,m3;
-Scanner sc=new Scanner(System.in);
-System.out.println("Enter student name,m1,m2,m3: ");
-name=sc.next();
-m1=sc.nextInt();
-m2=sc.nextInt();
-m3=sc.nextInt();
 
-Student s=new Student(name,m1,m2,m3);
-s.calculate();
-s.display();
-}
+
+
 }
