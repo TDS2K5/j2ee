@@ -6,14 +6,14 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.*;
 
-// ==================== STEP 1: Custom Annotation ====================
+//  STEP 1: Custom Annotation 
 @Retention(RetentionPolicy.RUNTIME)
 @interface BookInfo {
     String genre();
     String addedBy();
 }
 
-// ==================== STEP 2: Enum BookStatus ====================
+//  STEP 2: Enum BookStatus 
 enum BookStatus {
     AVAILABLE("The book is available on the shelf"),
     BORROWED("The book has been borrowed by a member"),
@@ -31,7 +31,7 @@ enum BookStatus {
     }
 }
 
-// ==================== STEP 3: JavaBean BookBean ====================
+//  STEP 3: JavaBean BookBean 
 @BookInfo(genre = "Science Fiction", addedBy = "Admin")
 class BookBean implements java.io.Serializable {
     // Private fields
@@ -93,7 +93,7 @@ class BookBean implements java.io.Serializable {
     }
 }
 
-// ==================== STEP 4: Main Program ====================
+//  STEP 4: Main Program 
 public class Asgn {
     public static void main(String[] args) {
 
