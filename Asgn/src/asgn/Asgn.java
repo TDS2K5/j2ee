@@ -15,9 +15,9 @@ import java.util.*;
 
 //  STEP 2: Enum BookStatus 
 enum BookStatus {
-    AVAILABLE("The book is available on the shelf"),
-    BORROWED("The book has been borrowed by a member"),
-    RESERVED("The book is reserved for someone"),
+    AVAILABLE("The book is available "),
+    BORROWED("The book has been borrowed "),
+    RESERVED("The book is reserved "),
     LOST("The book is reported lost");
 
     private String message;
