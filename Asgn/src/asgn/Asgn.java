@@ -137,31 +137,3 @@ public class Asgn {
 
 
 
-
-//Design a mini Library Management System in Java using JavaBeans, Enums, and Annotations together.
-//
-//### Requirements
-//
-//**Step 1: Create an Annotation @BookInfo**
-//Define a custom annotation with:
-//* genre (String)
-//* addedBy (String)
-//* Use @Retention (RUNTIME) so it can be read at runtime.
-//
-//**Step 2: Create an Enum BookStatus**
-//* With values: AVAILABLE, BORROWED, RESERVED, LOST
-//* Each value must hold a display message via a constructor.
-//
-//**Step 3: Create a JavaBean BookBean**
-//* Fields:
-//    * title (String)
-//    * price (Double) - use Wrapper class
-//    * status (BookStatus) - use your enum
-//    * borrowCount (int array, indexed - track borrows per month for 12 months)
-//
-//**Step 4: Main Program**
-//* Annotate the BookBean class with @BookInfo(genre="Science Fiction", addedBy="Admin").
-//* Create a BookBean object and set its fields.
-//* Change its status to BORROWED and print the status message.
-//* Set borrow count for months 1-3 using an indexed setter.
-//* Use Reflection to read and print the @BookInfo annotation values.
