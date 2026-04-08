@@ -2,8 +2,7 @@
 package asgn;
 
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.*;
 import java.util.*;
 
 //  STEP 1: Custom Annotation 
