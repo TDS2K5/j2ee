@@ -51,6 +51,7 @@ public class A3Arraylist {
                 case 5:
                     if(list.isEmpty()){
                         System.out.println("list is empty ");
+                        break;
                     }else{
                         System.out.println("list elements are : \n");
                         Iterator<Integer> itr=list.iterator();
@@ -58,6 +59,7 @@ public class A3Arraylist {
                             System.out.printf("%d ",itr.next());
                         }
                     }
+                   break;
                 
                 case 6:
                     System.out.println("enter starting and ending elements : ");

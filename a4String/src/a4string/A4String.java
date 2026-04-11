@@ -26,7 +26,7 @@ public class A4String {
                 for(int i=0;i<word.length();i+=2){
                     temp=temp+word.charAt(i+1)+word.charAt(i);
                 }
-                System.out.println(temp);
+                System.out.println(temp+" ");
             }
             for(char c:word.toCharArray()){
                 if(Character.isUpperCase(c)){
