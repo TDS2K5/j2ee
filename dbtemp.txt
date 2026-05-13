@@ -1,0 +1,56 @@
+index.html
+<form action="DBTemplate">
+Example input: <input type="number" name="example_input">
+<!--Add as many input you can with the name-->
+<input type="submit" value="This is submit button">
+</form>
+DBTemplate.java
+protected void processRequest(HttpServletRequest request, HttpServletResponse
+response) throws ServletException, IOException {
+response.setContentType("text/html;charset=UTF-8");
+PrintWriter out = response.getWriter();
+try {
+//Load mysql driver
+Class.forName("com.mysql.jdbc.Driver");
+//Create Connection object
+Connection
+con=DriverManager.getConnection("jdbc:mysql://localhost:3099/javadb","root",""
+);
+//Create preparedStatement object
+PreparedStatement stmt=con.prepareStatement("Insert into TableName
+values(?)");
+//Access the data from frontEnd
+//same name as front end
+int data=Integer.parseInt(request.getParameter("example_input"));
+//set this value to query
+stmt.setInt(1, data);
+//execute this query
+int r=stmt.executeUpdate();
+if(r>0)
+out.print("Success");
+else
+out.print("Failed");
+//For fetching
+stmt=con.prepareStatement("Select * from TableName where id=?");
+stmt.setInt(1, data);
+//executeResultSetquery
+res=stmt.executeQuery();
+}
+//display all the record in tabular format
+out.print("<table border=1>"
++ "<tr>"
++ "<th>Id</th>"
++ "<th>Name</th>"
++ "<th>Average</th>"
++ "</tr>");
+while(res.next()){
+out.println("<tr>"
++ "<td>"+res.getInt(1)+"</td>"
++ "<td>"+res.getString(2)+"</td>"
++ "<td>"+res.getFloat(3)+"</td>"
++ "</tr>");
+}
+out.print("</table>");
+}catch(Exception e){
+System.out.println(e);
+}

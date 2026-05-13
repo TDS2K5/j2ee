@@ -1,0 +1,53 @@
+Create 3 classes for all RMI programs:
+1.2.3.Methods.java (Interface)
+Server.java(implement methods of Methods and create main method)
+Client.java(call methods implemented in Server)
+Methods. Java
+Create a simple interface in default package.
+1.2.3.4.5.6.Right-click on project
+Click on new
+Select java interface
+Name as Method
+NO NEED TO GIVE PACKAGE NAME
+Click on finish
+public interface AddInterface extends Remote {
+// Here wright only the method signature
+// and the method should throw RemoteException
+}
+Server.java
+It should contain 3 main parts.
+1. Constructor( Generate it using insertCode)
+2. Implement all the methods of Method.java
+3. Write Public Static Void Main(String args[])
+public class Server extends UnicastRemoteObject implements Methods {
+//step 1: constructor
+public Server() throws RemoteException {}
+//step 2: method implementation
+//step 3: main method
+public static void main(String[] args) {
+try {
+LocateRegistry.createRegistry(1099);
+Server s = new Server();
+Naming.rebind("rmi://localhost:1099/ServerObject", s);
+System.out.println("RMI Registry started on port 1099...");
+} catch (Exception e) {
+System.err.println(e);
+}
+}
+}
+Client.java
+1. Write only public static void method(String args[])
+public class Client {
+public static void main(String[] args) {
+try {
+Methods service = (Methods) Naming.lookup("rmi://localhost/ServerObject ");
+//Declare variable
+//take input from user through command line arguments
+//or though Scanner class
+//call the method on the remote object using service object
+}
+}
+//print the result
+} catch (Exception e) {
+System.err.println(e);
+}
